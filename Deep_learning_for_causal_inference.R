@@ -36,7 +36,6 @@ compile(model, optimizer='sgd', loss='binary_crossentropy',metrics='acc') #logis
 fit(model, training_x,training_D)
 
 summary(predict(model,test_x)) # True propensity has Min = 0.2500, Max = 0.7773.
-# ISSUE: dropout flattens the peak propensity's distribution severely (see next plot)
 
 p_2 <- function(u){return( (1 + dbeta(u,2,4)) / 4 )} #rewrite p(x) to accept 1-dim input for plot
 u <- seq(0,1,by=0.0001)
